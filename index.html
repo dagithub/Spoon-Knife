@@ -34,12 +34,22 @@
     
   </style>
   <script type="text/javascript">
-	var keyCodes=new Array(10);
-	var pattern=[38,38,40,40,37,39,37,39,66,65];
+	var keyCodes=new Array(4);
+	var pattern=[38,40,37,39];
+
+	//up arrow	 38
+	//down arrow	 40
+	//left arrow	 37
+	//right arrow	 39
+
 	function keydownHandler(e){
+	//alert(e.keyCode);
+		
 		keyCodes.shift();
+
 		keyCodes.push(e.keyCode);
 		if(keyCodes.every(function(element, index, array){return element===pattern[index];})){
+			alert("Yes");
 			document.getElementById("rainbow-message").style.display="";
 		}
 	}
